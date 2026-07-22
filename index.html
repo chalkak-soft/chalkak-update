@@ -35,6 +35,10 @@
   .faq dt::before { content: "Q. "; color: #b5722f; }
   .faq dd { margin: 4px 0 0; color: #5a4630; }
   .faq dd::before { content: "A. "; color: #8a7a60; font-weight: 700; }
+  .steps { list-style: none; counter-reset: s; margin-top: 6px; }
+  .steps li { position: relative; padding: 12px 14px 12px 52px; margin: 10px 0; background: #fff6dd; border-radius: 10px; }
+  .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
+  .steps b { color: #b5722f; }
   footer { background: #3a2e20; color: #d9cbb5; font-size: .85rem; padding: 26px 0; margin-top: 30px; }
   footer strong { color: #ffe05c; }
   footer a { color: #ffe05c; text-decoration: none; }
@@ -105,6 +109,17 @@
 </section>
 
 <section>
+  <h2>구독하는 방법</h2>
+  <ol class="steps">
+    <li>프로그램을 설치하고 실행한 뒤, 위쪽 <b>[라이선스 등록]</b> 버튼을 누릅니다.</li>
+    <li>창에 표시된 <b>이 PC 기기번호</b>(예: A1B2-C3D4)를 [복사]합니다.</li>
+    <li>같은 창의 <b>[💬 카카오톡으로 문의]</b> 버튼을 누르면 채팅창이 열립니다. 복사한 기기번호를 붙여넣어 보내주세요.</li>
+    <li>입금 확인 후 <b>이 PC 전용 코드</b>를 보내드립니다. 그 코드를 [라이선스 등록] 칸에 붙여넣으면 정식판으로 전환됩니다.</li>
+  </ol>
+  <p class="note">기기번호는 PC마다 다르며, 발급된 코드는 그 PC에서만 작동합니다(코드 공유 방지). 7일 무료 이용권도 같은 방법으로 신청하시면 됩니다.</p>
+</section>
+
+<section>
   <h2>자주 묻는 질문</h2>
   <dl class="faq">
     <dt>설치할 때 파란 경고창이 떠요.</dt>
@@ -115,6 +130,8 @@
     <dd>지정하신 폴더 안에서만 아이별로 정리됩니다. 사진이 외부(인터넷)로 전송되는 일은 전혀 없습니다. 모든 처리는 내 컴퓨터 안에서 이루어집니다.</dd>
     <dt>컴퓨터를 잘 몰라도 쓸 수 있나요?</dt>
     <dd>네. 사진을 폴더에 넣고 버튼 몇 개만 누르면 됩니다. 설치 시 안내 마법사가 처음 설정을 도와드리고, 사용설명서도 함께 드립니다.</dd>
+    <dt>'기기번호'가 뭔가요?</dt>
+    <dd>구독 코드를 그 PC에만 발급하기 위한 번호입니다(코드 공유 방지). [라이선스 등록] 창에 자동으로 표시되니, [복사] 후 [카카오톡으로 문의] 버튼을 눌러 채팅창에 붙여넣어 보내주시면 됩니다. 어렵지 않아요.</dd>
     <dt>먼저 써보고 결정하고 싶어요.</dt>
     <dd>설치만 하면 체험판을 바로 쓸 수 있고, 카카오톡 채널로 문의하시면 모든 기능이 열리는 7일 무료 이용권을 보내드립니다.</dd>
   </dl>
