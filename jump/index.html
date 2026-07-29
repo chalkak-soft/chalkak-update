@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>폭탄 줄넘기 — 무료 배포 | 토리태권도</title>
+<meta name="description" content="태권도장 줄넘기 게임 진행 도구. 폭탄이 매번 랜덤한 시각에 터집니다. 설치 없이 실행, 무료.">
+<link rel="icon" href="icon.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif; color: #3a2e20; background: #fffdf7; line-height: 1.7; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { background: linear-gradient(180deg, #ffe05c, #ffc828); padding: 48px 0 40px; text-align: center; }
+  .applogo { border-radius: 22px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  h1 { font-size: 2rem; margin-top: 12px; }
+  .tagline { font-size: 1.05rem; margin-top: 8px; color: #5a4630; }
+  .btn-dl {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px 36px;
+    background: #3a2e20;
+    color: #ffe05c;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  }
+  .btn-dl:hover { background: #241b0f; }
+  .dlhint { font-size: .9rem; color: #6b5636; margin-top: 12px; }
+  section { padding: 36px 0; }
+  h2 { font-size: 1.3rem; border-left: 5px solid #ffc828; padding-left: 10px; margin-bottom: 16px; }
+  ul.feat { list-style: none; margin-top: 4px; }
+  ul.feat li { margin: 10px 0 10px 4px; }
+  ul.feat li::before { content: "— "; color: #b5722f; font-weight: 700; }
+  .steps { list-style: none; counter-reset: s; margin-top: 6px; }
+  .steps li { position: relative; padding: 12px 14px 12px 52px; margin: 10px 0; background: #fff6dd; border-radius: 10px; }
+  .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
+  .steps b { color: #b5722f; }
+  .note { font-size: .9rem; color: #8a7a60; margin-top: 8px; }
+  /* 유료 옵션. 무료 배포 페이지라 이 칸만 색을 뒤집어 눈이 멈추게 한다. */
+  .custom { background: #3a2e20; color: #f3e7d2; border-radius: 16px; padding: 26px 24px; }
+  .custom .price { display: inline-block; background: #ffc828; color: #3a2e20; font-weight: 800; font-size: .9rem; padding: 5px 12px; border-radius: 999px; }
+  .custom .ch2 { font-size: 1.45rem; border: 0; padding: 0; margin: 14px 0 10px; color: #fff; }
+  .custom .clead { color: #d9cbb5; margin-bottom: 16px; }
+  .custom ul.feat li::before { color: #ffc828; }
+  .custom .quote { display: inline-block; margin-top: 4px; color: #b9a684; font-size: .92rem; }
+  .btn-ask { display: inline-block; margin-top: 16px; padding: 14px 28px; background: #ffc828; color: #3a2e20; font-weight: 800; text-decoration: none; border-radius: 12px; }
+  .btn-ask:hover { background: #ffd54a; }
+  .custom .note { color: #a8977c; }
+  .story { background: #fff6dd; border-radius: 14px; padding: 20px 22px; }
+  .footer-chalkak { background: #fff6dd; border-top: 2px solid #ffc828; padding: 28px 0; text-align: center; }
+  .footer-chalkak p { margin: 6px 0; font-size: .95rem; color: #5a4630; }
+  .footer-chalkak a { color: #b5722f; font-weight: 700; text-decoration: none; }
+  .footer-chalkak a:hover { text-decoration: underline; }
+  footer { background: #3a2e20; color: #d9cbb5; font-size: .85rem; padding: 26px 0; margin-top: 0; }
+  footer strong { color: #ffe05c; }
+  footer a { color: #ffe05c; text-decoration: none; }
+  @media (max-width: 480px) {
+    h1 { font-size: 1.6rem; }
+    .btn-dl { font-size: 1rem; padding: 14px 24px; }
+    h2 { font-size: 1.15rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="applogo" src="icon.png" alt="폭탄 줄넘기" width="96" height="96">
+    <h1>폭탄 줄넘기</h1>
+    <p class="tagline">폭탄이 매번 랜덤한 시각에 터지는 줄넘기 게임 진행 도구</p>
+    <a class="btn-dl" href="https://github.com/chalkak-soft/bomb-jumprope/releases/latest/download/BombJumpRope.zip">다운로드 (Windows)</a>
+    <p class="dlhint">설치 없이 실행 &middot; 무료</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <div class="story">
+    폭발 시점을 미리 정해두면 아이들이 눈치로 알아챕니다. 이 프로그램은 폭탄이 터지는 시각을
+    매번 랜덤하게 정하고, 디스플레이 화면에 타이머나 카운트다운을 일절 표시하지 않아
+    참가자가 예측할 수 없습니다.
+  </div>
+</section>
+
+<section>
+  <h2>주요 기능</h2>
+  <ul class="feat">
+    <li>폭발 시각을 매 라운드 랜덤하게 결정 — 디스플레이에 타이머·카운트다운 없음</li>
+    <li>배경 영상 한 편으로 자동 라운드 진행 — 영상을 여러 개 만들 필요 없음</li>
+    <li>폭발 후 영상이 멈췄다가 그 지점부터 이어서 재생 (연속 모드)</li>
+    <li>무선 프리젠터(PageUp/PageDown)로 멀리서 시작·정지 조작 가능</li>
+    <li>폭발 시간 범위와 분포(균등·후반 가중·전반 가중·양끝 가중) 설정</li>
+    <li>배경 테마 6종 내장 — 네온 사이버, 용암 화산, 우주 성운, 회로 기판, 만화 팝아트, 군용 벙커</li>
+  </ul>
+  <p class="note">지원 환경: Windows 10 / 11</p>
+</section>
+
+<section>
+  <h2>설치 없이 바로 쓰는 법</h2>
+  <ol class="steps">
+    <li>위 버튼으로 zip 파일을 받은 뒤 <b>압축을 풀어</b>주세요.</li>
+    <li>폴더 안의 <b>폭탄줄넘기.exe</b>를 더블클릭하면 바로 실행됩니다.</li>
+    <li>"Windows의 PC 보호" 파란 창이 뜨면 <b>[추가 정보] → [실행]</b>을 누르세요. 서명 인증서가 없는 개인 제작 프로그램이라 뜨는 것이며, 한 번 누르면 다음부터 나타나지 않습니다.</li>
+    <li>창이 2개 열립니다. <b>진행자 창은 노트북</b>에, <b>디스플레이 창은 TV</b>로 끌어다 놓고 F 키를 누르면 전체화면입니다.</li>
+  </ol>
+  <p class="note">폴더 안 "1. 먼저 읽어주세요.txt"에 상세 조작법이 적혀 있습니다.</p>
+</section>
+
+<section>
+  <div class="custom">
+    <div class="price">20,000원 · 한 번만</div>
+    <h2 class="ch2">우리 도장 이름으로 바꿔 드립니다</h2>
+    <ul class="feat">
+      <li>화면 구석 로고를 <b>우리 도장 로고</b>로 교체</li>
+      <li>시작 안내 방송에 <b>도장 이름</b>을 넣어 새로 제작<br>
+        <span class="quote">"지금부터 OO태권도 폭탄 줄넘기 게임을 시작하겠습니다"</span></li>
+    </ul>
+    <a class="btn-ask" href="https://pf.kakao.com/_yQvfX">카카오톡으로 신청하기</a>
+    <p class="note">로고 파일을 보내주시면 만들어 드립니다. 이후 추가 비용은 없습니다.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="footer-chalkak">
+  <div class="wrap">
+    <p>아이들 사진, 동영상 원클릭 자동분류가 필요하시다면?</p>
+    <p>홈페이지&nbsp;&nbsp;&nbsp;<a href="https://chalkak-app.pages.dev/?from=jump">https://chalkak-app.pages.dev</a></p>
+    <p>카카오톡&nbsp;&nbsp;&nbsp;<a href="https://pf.kakao.com/_yQvfX">https://pf.kakao.com/_yQvfX</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>폭탄 줄넘기</strong> — 태권도장 줄넘기 게임 진행 도구</p>
+    <p style="margin-top:6px">제작 : 토리태권도 &nbsp;|&nbsp; 문의 : 카카오톡 채널 <a href="https://pf.kakao.com/_yQvfX">'찰칵정리'</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
