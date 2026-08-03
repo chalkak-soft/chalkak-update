@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "url": "https://github.com/chalkak-soft/chalkak-update/releases/latest/download/ChalkakSetup.zip",
-  "notes": "설치하고 켜면 바로 2주 무료로 바뀌었습니다. 신청도 코드도 필요 없습니다."
+  "notes": "학습 사진 파일 이름을 바꾸지 않으셔도 됩니다. 아이 폴더에 넣기만 하면 인식합니다.\n처음 설치한 컴퓨터에서 분류를 누를 때 멈추던 문제도 고쳤습니다.\n얼굴 인식 파일이 포함되어 용량이 큽니다(약 256MB). 정리하신 사진과 설정은 그대로 유지됩니다."
 }
