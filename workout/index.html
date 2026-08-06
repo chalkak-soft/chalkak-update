@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>랜덤 체력운동 — 태권도장 수업용 | 토리태권도</title>
+<meta name="description" content="슬롯을 돌려 오늘 할 운동을 뽑고, 음악과 함께 정해진 시간 동안 운동하는 태권도장 수업 진행 도구. TV(디스플레이)와 노트북(진행자 창)이 분리됩니다.">
+<link rel="icon" href="icon.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif; color: #3a2e20; background: #fffdf7; line-height: 1.7; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* 공통 메뉴 */
+  .site-nav { background: #3a2e20; padding: 0; }
+  .site-nav ul { list-style: none; display: flex; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .site-nav li a { display: block; padding: 11px 16px; color: #d9cbb5; text-decoration: none; font-size: .9rem; white-space: nowrap; }
+  .site-nav li a:hover { color: #ffe05c; }
+  .site-nav li.active a { color: #ffe05c; font-weight: 700; border-bottom: 3px solid #ffc828; }
+  @media (max-width: 480px) {
+    .site-nav li a { padding: 10px 10px; font-size: .82rem; }
+  }
+
+  header { background: linear-gradient(180deg, #ffe05c, #ffc828); padding: 48px 0 40px; text-align: center; }
+  .applogo { border-radius: 22px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  h1 { font-size: 2rem; margin-top: 12px; }
+  .tagline { font-size: 1.05rem; margin-top: 8px; color: #5a4630; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 8px 6px 0; }
+  .btn-dl { background: #b5722f; color: #fff; font-size: 1.05rem; }
+  .btn-kakao { background: #391b1b; color: #ffe05c; }
+  .dlhint { font-size: .9rem; color: #6b5636; margin-top: 14px; line-height: 1.5; }
+  section { padding: 36px 0; }
+  h2 { font-size: 1.3rem; border-left: 5px solid #ffc828; padding-left: 10px; margin-bottom: 16px; }
+  ul.feat { list-style: none; margin-top: 4px; }
+  ul.feat li { margin: 10px 0 10px 4px; }
+  ul.feat li::before { content: "— "; color: #b5722f; font-weight: 700; }
+  .note { font-size: .9rem; color: #8a7a60; margin-top: 8px; }
+  .story { background: #fff6dd; border-radius: 14px; padding: 20px 22px; }
+  .shot { margin: 22px 0; }
+  .shot img { width: 100%; border: 1px solid #e8ddc8; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.08); display: block; }
+  .shot .cap { font-size: .95rem; color: #5a4630; margin-top: 8px; }
+  .shot .cap b { color: #b5722f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #e8ddc8; padding: 10px 12px; text-align: center; }
+  th { background: #fff3d0; }
+  td.plan-free { color: #3a2e20; }
+  td.plan-premium { font-weight: 700; color: #b5722f; }
+  .plan-badge { display: inline-block; background: #b5722f; color: #fff; font-size: .78rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; vertical-align: middle; margin-left: 4px; }
+  .highlight { background: #fff6dd; border-left: 4px solid #ffc828; border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 14px 0; }
+  .steps { list-style: none; counter-reset: s; margin-top: 6px; }
+  .steps li { position: relative; padding: 12px 14px 12px 52px; margin: 10px 0; background: #fff6dd; border-radius: 10px; }
+  .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
+  .steps b { color: #b5722f; }
+  .custom { background: #3a2e20; color: #f3e7d2; border-radius: 16px; padding: 26px 24px; }
+  .custom .price-tag { display: inline-block; background: #ffc828; color: #3a2e20; font-weight: 800; font-size: .9rem; padding: 5px 12px; border-radius: 999px; }
+  .custom .ch2 { font-size: 1.3rem; border: 0; padding: 0; margin: 14px 0 10px; color: #fff; }
+  .custom .clead { color: #d9cbb5; margin-bottom: 14px; font-size: .95rem; }
+  .custom ul.feat li::before { color: #ffc828; }
+  .custom .note { color: #a8977c; }
+  .btn-ask { display: inline-block; margin-top: 16px; padding: 14px 28px; background: #ffc828; color: #3a2e20; font-weight: 800; text-decoration: none; border-radius: 12px; }
+  .btn-ask:hover { background: #ffd54a; }
+  footer { background: #3a2e20; color: #d9cbb5; font-size: .85rem; padding: 26px 0; margin-top: 30px; }
+  footer strong { color: #ffe05c; }
+  footer a { color: #ffe05c; text-decoration: none; }
+  @media (max-width: 480px) {
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.15rem; }
+    .btn { padding: 12px 18px; font-size: .95rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="/">찰칵정리</a></li>
+    <li><a href="/jump/">폭탄줄넘기</a></li>
+    <li class="active"><a href="/workout/">랜덤 체력운동</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="wrap">
+    <img class="applogo" src="icon.png" alt="랜덤 체력운동 아이콘" width="96" height="96">
+    <h1>랜덤 체력운동</h1>
+    <p class="tagline">슬롯을 돌려 오늘 할 운동을 뽑고, 음악과 함께 진행하는 태권도장 수업 도구</p>
+    <a class="btn btn-dl" href="https://github.com/chalkak-soft/random-workout/releases/latest/download/RandomWorkout.zip">다운로드 (Windows)</a>
+    <a class="btn btn-kakao" href="https://pf.kakao.com/_yQvfX/chat">카카오톡 문의</a>
+    <p class="dlhint">30일 무료 체험 · Windows 10/11</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <div class="story">
+    매 수업마다 "오늘은 뭐 할까?" 결정하는 것도 일입니다.
+    랜덤 체력운동은 광주 토리태권도 관장이 직접 만들어 수업에 쓰고 있는 도구입니다.
+    슬롯을 돌려 오늘 할 운동을 뽑고, 정해진 시간 동안 음악이 나오며 운동한 뒤,
+    바로 다음 운동을 뽑습니다. 운동 이름·확률·시간은 관장님이 직접 설정합니다.
+  </div>
+</section>
+
+<section>
+  <h2>이렇게 진행됩니다</h2>
+
+  <div class="shot">
+    <img src="cap-spin.png" alt="슬롯이 돌아가는 화면">
+    <p class="cap"><b>1. 슬롯이 돌아가며 운동을 뽑습니다.</b> TV에 표시되는 화면이고, 아이들은 어떤 운동이 나올지 화면을 봅니다.</p>
+  </div>
+
+  <div class="shot">
+    <img src="cap-work.png" alt="운동 이름과 남은 시간 카운트다운">
+    <p class="cap"><b>2. 운동 이름과 남은 시간이 표시됩니다.</b> 배경음악이 시작되고, 시간이 다 되면 쉬는 시간 없이 바로 다음 슬롯으로 넘어갑니다.</p>
+  </div>
+
+  <div class="highlight">
+    <b>"운동 끝!" 줄이 뽑히면 그 자리에서 운동이 끝납니다.</b><br>
+    확률을 낮게 설정할수록 오래 운동하고, 높게 설정할수록 일찍 끝날 수 있습니다. 관장님이 원하는 강도에 맞게 조절하시면 됩니다.
+  </div>
+
+  <div class="shot">
+    <img src="cap-control.png" alt="진행자 창 — 관장님이 보는 조작 화면">
+    <p class="cap"><b>3. 진행자 창은 노트북에서 관장님만 봅니다.</b> 아이들이 보는 TV 화면과 따로 분리되어 있어, 조작 화면이 아이들에게 보이지 않습니다.</p>
+  </div>
+
+  <div class="shot">
+    <img src="cap-list.png" alt="운동 목록 편집 화면">
+    <p class="cap"><b>4. 운동 목록은 관장님이 직접 편집합니다.</b> 운동 이름·확률·운동 시간을 최대 20줄까지 설정할 수 있습니다. 예: 버피 5개 12% · 버피 20개 3%</p>
+  </div>
+
+  <p class="note">배경음악은 지정 폴더에 넣어둔 곡 중에서 매번 곡도, 재생 시작 위치도 랜덤으로 골라 재생됩니다.</p>
+</section>
+
+<section>
+  <h2>이용 요금</h2>
+  <table>
+    <tr><th>구분</th><th>내용</th></tr>
+    <tr>
+      <td>30일 무료 체험</td>
+      <td class="plan-free">모든 기능을 제한 없이 사용 (설치 후 자동 시작)</td>
+    </tr>
+    <tr>
+      <td>무료판</td>
+      <td class="plan-free">운동 목록 1개 + 배경음악</td>
+    </tr>
+    <tr>
+      <td>프리미엄<span class="plan-badge">20,000원 · 무제한</span></td>
+      <td class="plan-premium">운동 목록 프리셋 무한 생성 + 배경영상 + 도장 로고 삽입</td>
+    </tr>
+    <tr>
+      <td>찰칵정리 구독자</td>
+      <td class="plan-free">구독 기간 동안 프리미엄 무료</td>
+    </tr>
+  </table>
+  <p class="note">구독 신청·결제는 카카오톡 채널로 문의해 주세요.</p>
+</section>
+
+<section>
+  <div class="custom">
+    <div class="price-tag">프리미엄 · 20,000원 · 무제한</div>
+    <h2 class="ch2">더 다양하게 쓰고 싶다면</h2>
+    <p class="clead">한 번 구매하면 추가 비용 없이 계속 쓸 수 있습니다.</p>
+    <ul class="feat">
+      <li>운동 목록 프리셋 설정 — 유치부용, 저학년용, 고학년용, 줄넘기반 등 원하는 목록 무한 생성 가능</li>
+      <li>배경영상 — 내가 원하는 영상을 배경으로 진행 가능 (아이돌 영상, 무대 영상 등 · 영상 파일은 직접 준비하시고 저작권은 사용하시는 분이 확인하세요)</li>
+      <li>도장 로고 삽입 — 화면에 우리 도장 로고 표시</li>
+    </ul>
+    <a class="btn-ask" href="https://pf.kakao.com/_yQvfX/chat">카카오톡으로 문의하기</a>
+    <p class="note">찰칵정리 구독 중이시면 구독 기간 동안 프리미엄이 무료입니다. 채널로 알려주시면 확인 후 안내해 드립니다.</p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>랜덤 체력운동</strong> — 태권도장 수업용 운동 진행 도구</p>
+    <p style="margin-top:6px">제작: 토리태권도 &nbsp;|&nbsp; 문의: 카카오톡 채널 <a href="https://pf.kakao.com/_yQvfX">'찰칵정리'</a></p>
+    <p style="margin-top:6px; font-size:.8rem">상호: 토리태권도 &nbsp;|&nbsp; 대표: 최민규 &nbsp;|&nbsp; 사업자등록번호: 740-93-02035 &nbsp;|&nbsp; 광주광역시 서구 금호동</p>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "15aae42043154b0c8a81c364653a3975"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

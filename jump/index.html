@@ -58,14 +58,29 @@
   footer { background: #3a2e20; color: #d9cbb5; font-size: .85rem; padding: 26px 0; margin-top: 0; }
   footer strong { color: #ffe05c; }
   footer a { color: #ffe05c; text-decoration: none; }
+  /* 공통 메뉴 */
+  .site-nav { background: #3a2e20; }
+  .site-nav ul { list-style: none; display: flex; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .site-nav li a { display: block; padding: 11px 16px; color: #d9cbb5; text-decoration: none; font-size: .9rem; white-space: nowrap; }
+  .site-nav li a:hover { color: #ffe05c; }
+  .site-nav li.active a { color: #ffe05c; font-weight: 700; border-bottom: 3px solid #ffc828; }
   @media (max-width: 480px) {
     h1 { font-size: 1.6rem; }
     .btn-dl { font-size: 1rem; padding: 14px 24px; }
     h2 { font-size: 1.15rem; }
+    .site-nav li a { padding: 10px 10px; font-size: .82rem; }
   }
 </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="/">찰칵정리</a></li>
+    <li class="active"><a href="/jump/">폭탄줄넘기</a></li>
+    <li><a href="/workout/">랜덤 체력운동</a></li>
+  </ul>
+</nav>
 
 <header>
   <div class="wrap">

@@ -10,6 +10,13 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif; color: #3a2e20; background: #fffdf7; line-height: 1.7; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  /* 공통 메뉴 */
+  .site-nav { background: #3a2e20; }
+  .site-nav ul { list-style: none; display: flex; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .site-nav li a { display: block; padding: 11px 16px; color: #d9cbb5; text-decoration: none; font-size: .9rem; white-space: nowrap; }
+  .site-nav li a:hover { color: #ffe05c; }
+  .site-nav li.active a { color: #ffe05c; font-weight: 700; border-bottom: 3px solid #ffc828; }
+  @media (max-width: 480px) { .site-nav li a { padding: 10px 10px; font-size: .82rem; } }
   header { background: linear-gradient(180deg, #ffe05c, #ffc828); padding: 48px 0 40px; text-align: center; }
   header img { width: 140px; height: 140px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,.15); }
   h1 { font-size: 2rem; margin-top: 16px; }
@@ -50,6 +57,14 @@
 </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <ul>
+    <li class="active"><a href="/">찰칵정리</a></li>
+    <li><a href="/jump/">폭탄줄넘기</a></li>
+    <li><a href="/workout/">랜덤 체력운동</a></li>
+  </ul>
+</nav>
 
 <header>
   <div class="wrap">
