@@ -38,6 +38,11 @@
   .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
   .steps b { color: #b5722f; }
   .note { font-size: .9rem; color: #8a7a60; margin-top: 8px; }
+  .faq { margin-top: 10px; }
+  .faq dt { font-weight: 700; margin-top: 16px; color: #3a2e20; }
+  .faq dt::before { content: "Q. "; color: #b5722f; }
+  .faq dd { margin: 4px 0 0; color: #5a4630; }
+  .faq dd::before { content: "A. "; color: #8a7a60; font-weight: 700; }
   /* 유료 옵션. 무료 배포 페이지라 이 칸만 색을 뒤집어 눈이 멈추게 한다. */
   .custom { background: #3a2e20; color: #f3e7d2; border-radius: 16px; padding: 26px 24px; }
   .custom .price { display: inline-block; background: #ffc828; color: #3a2e20; font-weight: 800; font-size: .9rem; padding: 5px 12px; border-radius: 999px; }
@@ -158,10 +163,23 @@
   <ol class="steps">
     <li>위 버튼으로 zip 파일을 받은 뒤 <b>압축을 풀어</b>주세요.</li>
     <li>폴더 안의 <b>폭탄줄넘기.exe</b>를 더블클릭하면 바로 실행됩니다.</li>
-    <li>"Windows의 PC 보호" 파란 창이 뜨면 <b>[추가 정보] → [실행]</b>을 누르세요. 서명 인증서가 없는 개인 제작 프로그램이라 뜨는 것이며, 한 번 누르면 다음부터 나타나지 않습니다.</li>
+    <li>"Windows의 PC 보호" 파란 창이 뜨면 <b>[추가 정보] → [실행]</b>을 누르세요. 인터넷에서 받은 프로그램을 처음 실행할 때 Windows가 한 번 더 확인하는 창이며, 한 번 누르면 다음부터 나타나지 않습니다.</li>
     <li>창이 2개 열립니다. <b>진행자 창은 노트북</b>에, <b>디스플레이 창은 TV</b>로 끌어다 놓고 F 키를 누르면 전체화면입니다.</li>
   </ol>
   <p class="note">폴더 안 "1. 먼저 읽어주세요.txt"에 상세 조작법이 적혀 있습니다.</p>
+</section>
+
+<section>
+  <h2>자주 묻는 질문</h2>
+  <dl class="faq">
+    <dt>이 프로그램 안전한가요?</dt>
+    <dd>설치도, 등록도, 로그인도 없습니다. 레지스트리를 건드리지 않으니 지우고 싶으시면 폴더째 삭제하면 끝입니다.<br>
+      만든 곳은 <b>토리태권도</b>(광주광역시 서구 금호동, 사업자등록번호 740-93-02035)이고,
+      파일은 <b>github.com/chalkak-soft</b> 에서만 배포합니다. 다른 곳에서 받으신 파일은 저희 것이 아닙니다.<br>
+      미덥지 않으시면 받으신 파일을 <b>virustotal.com</b> 에 올려 검사해 보세요. 무료입니다.</dd>
+    <dt>돈이 드나요?</dt>
+    <dd>무료입니다. 기능 제한도, 사용 기간 제한도 없습니다. 도장 이름을 넣어 드리는 전용판만 따로 있습니다.</dd>
+  </dl>
 </section>
 
 <section>

@@ -51,6 +51,11 @@
   .steps li { position: relative; padding: 12px 14px 12px 52px; margin: 10px 0; background: #fff6dd; border-radius: 10px; }
   .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
   .steps b { color: #b5722f; }
+  .faq { margin-top: 10px; }
+  .faq dt { font-weight: 700; margin-top: 16px; color: #3a2e20; }
+  .faq dt::before { content: "Q. "; color: #b5722f; }
+  .faq dd { margin: 4px 0 0; color: #5a4630; }
+  .faq dd::before { content: "A. "; color: #8a7a60; font-weight: 700; }
   .custom { background: #3a2e20; color: #f3e7d2; border-radius: 16px; padding: 26px 24px; }
   .custom .price-tag { display: inline-block; background: #ffc828; color: #3a2e20; font-weight: 800; font-size: .9rem; padding: 5px 12px; border-radius: 999px; }
   .custom .ch2 { font-size: 1.3rem; border: 0; padding: 0; margin: 14px 0 10px; color: #fff; }
@@ -203,6 +208,26 @@
   </div>
 
   <p class="note">배경음악과 배경영상은 <code>assets\bgm\</code>, <code>assets\video\</code> 폴더에 파일을 넣고 [목록 새로고침]을 누르면 바로 잡힙니다. 영상·음악 파일은 직접 준비하시고, 저작권은 사용하시는 분이 확인해 주세요.</p>
+</section>
+
+<section>
+  <h2>받아서 실행하는 법</h2>
+  <ol class="steps">
+    <li>위 버튼으로 zip 파일을 받은 뒤 <b>압축을 풀어</b>주세요.</li>
+    <li>폴더 안의 프로그램을 더블클릭하면 바로 실행됩니다. 따로 설치할 것이 없습니다.</li>
+    <li>"Windows의 PC 보호" 파란 창이 뜨면 <b>[추가 정보] → [실행]</b>을 누르세요. 인터넷에서 받은 프로그램을 처음 실행할 때 Windows가 한 번 더 확인하는 창이며, 한 번 누르면 다음부터 나타나지 않습니다.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>자주 묻는 질문</h2>
+  <dl class="faq">
+    <dt>이 프로그램 안전한가요?</dt>
+    <dd>설치도, 등록도, 로그인도 없습니다. 압축을 풀면 바로 실행되고, 지우고 싶으시면 폴더째 삭제하면 끝입니다.<br>
+      만든 곳은 <b>토리태권도</b>(광주광역시 서구 금호동, 사업자등록번호 740-93-02035)이고,
+      파일은 <b>github.com/chalkak-soft</b> 에서만 배포합니다. 다른 곳에서 받으신 파일은 저희 것이 아닙니다.<br>
+      미덥지 않으시면 받으신 파일을 <b>virustotal.com</b> 에 올려 검사해 보세요. 무료입니다.</dd>
+  </dl>
 </section>
 
 <section>
