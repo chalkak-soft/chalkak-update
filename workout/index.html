@@ -51,6 +51,14 @@
   .steps li { position: relative; padding: 12px 14px 12px 52px; margin: 10px 0; background: #fff6dd; border-radius: 10px; }
   .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
   .steps b { color: #b5722f; }
+  /* 사용 방법 미디어 — 기존 클래스와 겹치지 않게 전용 이름을 쓴다 */
+  .media-demo { margin: 22px 0; }
+  .media-demo video, .media-demo img.media-still {
+    width: 100%; border-radius: 10px; border: 1px solid #e8ddc8;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08); display: block; background: #1a1a1a;
+  }
+  .media-demo .media-cap { font-size: .95rem; color: #5a4630; margin-top: 8px; }
+  .media-demo .media-cap b { color: #b5722f; }
   .faq { margin-top: 10px; }
   .faq dt { font-weight: 700; margin-top: 16px; color: #3a2e20; }
   .faq dt::before { content: "Q. "; color: #b5722f; }
@@ -121,6 +129,16 @@
 
 <section>
   <h2>이렇게 진행됩니다</h2>
+
+  <div class="media-demo">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="media/workout_spin_poster.jpg"
+           aria-label="랜덤 체력운동 실제 진행 화면 — 슬롯이 돌아 운동을 뽑고 카운트다운이 시작됩니다">
+      <source src="media/workout_spin.mp4" type="video/mp4">
+      <img class="media-still" src="media/workout_spin_poster.jpg" alt="랜덤 체력운동 진행 화면">
+    </video>
+    <p class="media-cap"><b>실제 TV 화면입니다.</b> 슬롯이 돌아 운동을 뽑고, 뽑히는 순간 시간이 시작됩니다.</p>
+  </div>
 
   <div class="shot">
     <img src="cap-spin.png" alt="슬롯이 돌아가는 화면">
