@@ -38,6 +38,14 @@
   .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; background: #b5722f; color: #fff; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; }
   .steps b { color: #b5722f; }
   .note { font-size: .9rem; color: #8a7a60; margin-top: 8px; }
+  /* 사용 방법 미디어 — 기존 클래스와 겹치지 않게 전용 이름을 쓴다 */
+  .media-demo { margin: 22px 0 0; }
+  .media-demo video, .media-demo img.media-still {
+    width: 100%; border-radius: 10px; border: 1px solid #e8ddc8;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08); display: block; background: #1a1a1a;
+  }
+  .media-demo .media-cap { font-size: .95rem; color: #5a4630; margin-top: 8px; }
+  .media-demo .media-cap b { color: #b5722f; }
   .faq { margin-top: 10px; }
   .faq dt { font-weight: 700; margin-top: 16px; color: #3a2e20; }
   .faq dt::before { content: "Q. "; color: #b5722f; }
@@ -111,6 +119,16 @@
     폭발 시점을 미리 정해두면 아이들이 눈치로 알아챕니다. 이 프로그램은 폭탄이 터지는 시각을
     매번 랜덤하게 정하고, 디스플레이 화면에 타이머나 카운트다운을 일절 표시하지 않아
     참가자가 예측할 수 없습니다.
+  </div>
+
+  <div class="media-demo">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="media/jump_play_poster.jpg"
+           aria-label="폭탄 줄넘기 진행 화면 — 라운드 진행 중 예고 없이 폭발합니다">
+      <source src="media/jump_play.mp4" type="video/mp4">
+      <img class="media-still" src="media/jump_play_poster.jpg" alt="폭탄 줄넘기 진행 화면">
+    </video>
+    <p class="media-cap"><b>실제 디스플레이 화면입니다.</b> 남은 시간이 어디에도 표시되지 않아, 아이들은 언제 터질지 알 수 없습니다.</p>
   </div>
 </section>
 
