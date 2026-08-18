@@ -42,6 +42,18 @@
   .shot img { width: 100%; border: 1px solid #e8ddc8; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.08); display: block; }
   .shot .cap { font-size: .95rem; color: #5a4630; margin-top: 8px; }
   .shot .cap b { color: #b5722f; }
+  /* 정리 결과(탐색기) — 원본이 627px라 그 이상 늘리면 흐려진다 */
+  .result-shot { margin: 26px 0 6px; }
+  .result-shot .result-lead { margin-bottom: 10px; color: #3a2e20; }
+  .result-shot img {
+    display: block; width: 100%; max-width: 640px; margin: 0 auto;
+    border: 1px solid #e8ddc8; border-radius: 8px; background: #fff;
+  }
+  .result-shot .cap {
+    font-size: .95rem; color: #5a4630; margin: 8px auto 20px;
+    max-width: 640px;
+  }
+  .result-shot .cap b { color: #b5722f; }
   .faq { margin-top: 10px; }
   .faq dt { font-weight: 700; margin-top: 16px; color: #3a2e20; }
   .faq dt::before { content: "Q. "; color: #b5722f; }
@@ -122,7 +134,18 @@
     <img src="cap3.png" alt="주차별 통계 화면">
     <p class="cap"><b>3. 한눈에 확인</b> — 주차별로 아이마다 몇 장을 받았는지 표시하고, <b>사진이 없는 아이는 빨간색</b>으로 알려줘 미리 챙길 수 있습니다.</p>
   </div>
-  <p class="note">※ 화면 속 사진은 개인정보 보호를 위해 얼굴을 흐리게 처리했습니다.</p>
+  <div class="result-shot">
+    <p class="result-lead"><b>정리하면 내 컴퓨터 폴더가 이렇게 됩니다.</b></p>
+    <img src="result-folders.png" alt="아이 이름별로 만들어진 폴더와, 아직 정리되지 않은 카카오톡 사진 파일 목록">
+    <p class="cap">아이 이름으로 폴더가 만들어지고 사진이 그 안으로 들어갑니다.
+      아래처럼 <b>KakaoTalk_20260718_140501001.jpg</b> 같은 파일이 쌓여 있어도 그대로 두시면 됩니다.</p>
+    <img src="result-names.png" alt="날짜와 아이 이름으로 자동 변경된 파일 이름 목록">
+    <p class="cap">파일 이름도 <b>7월16일 김온유3</b> 처럼 날짜와 이름으로 바뀌어,
+      나중에 찾을 때 폴더를 열어보지 않아도 됩니다.</p>
+  </div>
+
+  <p class="note">※ 화면 속 사진은 개인정보 보호를 위해 얼굴을 흐리게 처리했습니다.
+    폴더·파일 이름 예시에 쓰인 아이 이름은 실제 원생이 아닌 <b>가상의 이름</b>입니다.</p>
 </section>
 
 <section id="features">
