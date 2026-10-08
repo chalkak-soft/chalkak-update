@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /version.json
+
+Sitemap: https://chalkak-app.pages.dev/sitemap.xml
