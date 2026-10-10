@@ -1,0 +1,10 @@
+# 2026-10-10 홈페이지가 태권토리(taekwontori.com)로 옮겨감 — 페이지 주소만 영구 이동(301).
+# version.json·이미지·릴리스 등 파일 주소는 옮기지 않는다(앱 업데이트는 raw.githubusercontent 를 씀).
+/                    https://taekwontori.com/chalkak/  301
+/index.html          https://taekwontori.com/chalkak/  301
+/jump                https://taekwontori.com/jump/     301
+/jump/               https://taekwontori.com/jump/     301
+/jump/index.html     https://taekwontori.com/jump/     301
+/workout             https://taekwontori.com/workout/  301
+/workout/            https://taekwontori.com/workout/  301
+/workout/index.html  https://taekwontori.com/workout/  301
